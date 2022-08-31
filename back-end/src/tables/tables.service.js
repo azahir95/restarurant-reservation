@@ -18,7 +18,7 @@ async function listFree(/* minCapacity */) {
 
 async function create(table) {
   return knex("tables")
-    .insert(table)
+    .insert({ ...table, status: 'available ' })
     .returning("*")
     .then((createdRecords) => createdRecords[0]);
 }
