@@ -12,9 +12,10 @@ const tablesRouter = require("./tables/tables.router");
 
 const app = express();
 console.log('hi mom');
-app.use(cors({origin: 'https://restaurant-reservation-frontend-rose.vercel.app'}));
+app.use(cors('*'));
+//app.use(cors({origin: 'https://restaurant-reservation-client-sooty.vercel.app/dashboard'}));
 app.use(express.json());
-
+app.options("*", cors());
 app.use("/reservations", reservationsRouter);
 app.use("/tables", tablesRouter);
 
