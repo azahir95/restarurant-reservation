@@ -15,7 +15,6 @@ console.log('hi mom');
 app.use(cors());
 //app.use(cors({origin: 'https://restaurant-reservation-client-sooty.vercel.app/dashboard'}));
 app.use(express.json());
-app.options("*", cors());
 app.use("/reservations", reservationsRouter);
 app.use("/tables", tablesRouter);
 
